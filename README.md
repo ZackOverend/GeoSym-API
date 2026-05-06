@@ -72,6 +72,17 @@ alembic upgrade head
 alembic downgrade -1
 ```
 
+## API
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/health` | Health check |
+| `POST` | `/jobs/submit` | Upload a GeoTIFF or scanned map PDF, returns `job_id` |
+| `GET` | `/jobs/{job_id}/status` | Poll job status |
+| `GET` | `/jobs/{job_id}/result` | Fetch GeoJSON result (check `status` field) |
+
+Full interactive docs at [http://localhost:8000/docs](http://localhost:8000/docs).
+
 ## Running tests
 
 ```bash

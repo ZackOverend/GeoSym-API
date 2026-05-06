@@ -1,6 +1,5 @@
 # https://docs.sqlalchemy.org/en/20/orm/declarative_tables.html
 # https://docs.sqlalchemy.org/en/20/core/defaults.html
-import enum
 import uuid
 from datetime import datetime
 
@@ -10,13 +9,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy.sql import func
 
 from app.db.base import Base
-
-
-class JobStatus(str, enum.Enum):
-    pending = "pending"
-    processing = "processing"
-    complete = "complete"
-    failed = "failed"
+from app.enums import JobStatus
 
 
 class Job(Base):
@@ -36,5 +29,5 @@ class Job(Base):
         DateTime(timezone=True), server_default=func.now(), nullable=False
     )
     updated_at: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
+        DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False
     )
