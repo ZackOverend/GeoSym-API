@@ -23,7 +23,10 @@ torchvision==0.26.0
 
 # Job queue
 arq==0.28.0
-redis==7.4.0
+redis==5.0.4
+
+# Docs
+scalar-fastapi==1.8.2
 
 # Utilities
 python-dotenv==1.2.2
