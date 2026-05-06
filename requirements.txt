@@ -21,6 +21,9 @@ opencv-python-headless==4.13.0.92
 torch==2.11.0
 torchvision==0.26.0
 
+# Async support
+greenlet==3.5.0
+
 # Job queue
 arq==0.28.0
 redis==5.0.4

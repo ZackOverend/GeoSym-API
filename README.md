@@ -53,9 +53,27 @@ uvicorn app.main:app --reload
 
 API docs available at [http://localhost:8000/docs](http://localhost:8000/docs).
 
+### 6. Start the ARQ worker (separate terminal)
+
+```bash
+arq app.worker.WorkerSettings
+```
+
+## Database migrations
+
+```bash
+# Generate a new migration after changing models
+alembic revision --autogenerate -m "description"
+
+# Apply all pending migrations
+alembic upgrade head
+
+# Roll back one migration
+alembic downgrade -1
+```
+
 ## Running tests
 
 ```bash
 pytest
 ```
-
