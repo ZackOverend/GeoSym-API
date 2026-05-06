@@ -1,0 +1,30 @@
+# API
+fastapi==0.136.1
+uvicorn==0.46.0
+gunicorn==26.0.0
+python-multipart==0.0.27
+
+# Database
+sqlalchemy==2.0.49
+asyncpg==0.31.0
+alembic==1.18.4
+
+# Validation
+pydantic==2.13.4
+pydantic-settings==2.14.0
+
+# Geo / Image processing
+rasterio==1.5.0
+opencv-python-headless==4.13.0.92
+
+# ML
+torch==2.11.0
+torchvision==0.26.0
+
+# Job queue
+arq==0.28.0
+redis==7.4.0
+
+# Utilities
+python-dotenv==1.2.2
+aiofiles==25.1.0
