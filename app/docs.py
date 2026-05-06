@@ -46,6 +46,6 @@ def scalar_docs() -> HTMLResponse:
         title="GeoSym API",
         custom_css=_TOPO_CSS,
     )
-    html = response.body.decode()
+    html = bytes(response.body).decode()
     html = html.replace("</body>", f"{_CREDIT_HTML}</body>")
     return HTMLResponse(content=html)
